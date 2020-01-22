@@ -34,6 +34,6 @@ cond = a < num < e
 print(cond)
 
 # -+######+------+######+------+---------------- >
-cond = a < num < b or c < num < d
+cond = (a < num < b) or (c < num < d)
 
 print("number", num, "==>", cond)
