@@ -3,12 +3,18 @@ b = 1
 
 counter = 1
 
-while counter < 500_000:
+while counter < 10:
+    # a_new = b
+    # b_new = a + b
+    #
+    # a, b = a_new, b_new
     a, b = b, a + b
+
     counter = counter + 1
 
 
-print(a)
+print(b/a)
 
-# 354224848179261915075
+# 1.618033988749895
+# 1.618033988749895‬
 
