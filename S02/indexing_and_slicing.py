@@ -12,7 +12,7 @@ print(sub_tup)
 
 
 text = "Hello,-World.-Hello,-World.-"
-word = text[7:14]
+word = text[1:2]
 print(word)
 
 
