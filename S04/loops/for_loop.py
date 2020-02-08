@@ -13,7 +13,7 @@ lst = [1, 2, True, "hello", (1, 2, 3)]
 
 
 factorial = 1
-n = 1000
+n = 5
 for i in range(1, n + 1):
     factorial = factorial * i
 
