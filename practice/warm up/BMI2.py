@@ -1,6 +1,6 @@
 imperial_or_standard = input("if you use imperial measurement system, Please type Yes otherwise type No")
 print(imperial_or_standard)
-if imperial_or_standard == Yes or yes:
+if imperial_or_standard.lower() == "yes":
     height = input("Please type your height (inch)")
     weight = input("Please type your weight (lbs)")
     weight = float(weight)
