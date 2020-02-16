@@ -2,6 +2,7 @@ import math
 
 
 def is_prime(n: int) -> bool:
+
     upper_limit = int(math.sqrt(n))
     for i in range(2, upper_limit):
         if n % i == 0:
