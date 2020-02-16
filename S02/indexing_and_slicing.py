@@ -14,7 +14,5 @@ print(sub_tup)
 text = "Hello,-World.-Hello,-World.-"
 word = text[1:2]
 print(word)
-
-
 val = len(text)
 print(val)
