@@ -7,15 +7,24 @@ def is_prime(n: int):
 
 
 def primes_generator(upper_limit: int):
-    lst = []
     for i in range(2, upper_limit):
         if is_prime(i):
-            lst.append(i)
-    return lst
+            yield i
 
 
-primes = primes_generator(100)
+def infinite_primes_generator():
+    i = 2
+    while True:
+        if is_prime(i):
+            yield i
+        i += 1
+
+
+primes = infinite_primes_generator()
+
 print(primes)
 
-# for prime in primes:
-#     print(prime)
+# next(primes)
+
+for prime in primes:
+    print(prime)
