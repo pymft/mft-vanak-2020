@@ -1,10 +1,11 @@
 import urllib.request
 
-url = "https://python.org"
 
-req = urllib.request.urlopen(url)
+def some_function(url):
+    req = urllib.request.urlopen(url)
+    text = req.read().decode('utf-8')
+    return text
 
-# text = req.read()  ## bytes object
-text = req.read().decode('utf-8')
 
+text = some_function("https://python.org")
 print(text)
