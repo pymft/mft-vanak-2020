@@ -8,7 +8,8 @@ def read_from_site(url):
     return text
 
 
-text = read_from_site("https://www.ualberta.ca/mechanical-engineering/faculty-and-staff")
+url = "https://www.ualberta.ca/mechanical-engineering/faculty-and-staff"
+text = read_from_site(url)
 pattern = r"[a-z]+@[a-z]+.[a-z]+"
 result = re.findall(pattern, text)
 print(result)

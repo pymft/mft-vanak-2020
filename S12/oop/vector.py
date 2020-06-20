@@ -7,7 +7,7 @@ class Vector:
         self.y = y
 
     def length(self):
-        temp = self.x ** 2 + self.y ** 2
+        temp = self.x * self.x + self.y * self.y
         result = math.sqrt(temp)
         return result
 

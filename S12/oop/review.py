@@ -3,6 +3,7 @@ class Square:
         self.area = a * a
         self.perimeter = 4 * a
 
+
 sq1 = Square(4)
 sq2 = Square(5)
 
