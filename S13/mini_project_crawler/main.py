@@ -25,18 +25,18 @@ class Website:
 
         return self.__emails
 
-
     @property
     def links(self):
         if self.__links is None:
-            pattern = r""
-            self.__links = re.findall(pattern, self.text)
-
+            pattern = r'<a[^>]* href="([^"]*)"'
+            links = re.findall(pattern, self.text)
+            self.__links = [Website(link) for link in links]
         return self.__links
 
 
 url = "https://www.ualberta.ca/mechanical-engineering/faculty-and-staff"
 website = Website(url)
 print(website.emails)
-print(website.text)
+for link in website.links[0].links:
+    print(link.url)
 
