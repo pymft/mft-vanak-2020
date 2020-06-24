@@ -14,25 +14,20 @@ class Parallelogram:
     def perimeter(self):
         return 2 * (self.width + self.height)
 
+
 class Diamond(Parallelogram):
     def __init__(self, a, c):
-        self.width = a
-        self.height = a
-        self.angle = c
+        super().__init__(a, a, c)
 
 
 class Rectangle(Parallelogram):
     def __init__(self, a, b):
-        self.width = a
-        self.height = b
-        self.angle = math.pi/2
+        super().__init__(a, b,  math.pi/2)
 
 
 class Square(Rectangle):
     def __init__(self, a):
-        self.width = a
-        self.height = a
-        self.angle = math.pi/2
+        super().__init__(a, a)
 
 
 
