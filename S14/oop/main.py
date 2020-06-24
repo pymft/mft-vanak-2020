@@ -14,6 +14,12 @@ class Parallelogram:
     def perimeter(self):
         return 2 * (self.width + self.height)
 
+class Diamond(Parallelogram):
+    def __init__(self, a, c):
+        self.width = a
+        self.height = a
+        self.angle = c
+
 
 class Rectangle(Parallelogram):
     def __init__(self, a, b):
@@ -37,5 +43,8 @@ print(sq.width, sq.height, sq.area, sq.perimeter)
 rect = Rectangle(3, 5)
 print(rect.width, rect.height, rect.area, rect.perimeter)
 
-rect = Parallelogram(3, 5, math.pi/6)
-print(rect.width, rect.height, rect.area, rect.perimeter)
+diamond = Rectangle(3, 5)
+print(diamond.width, diamond.height, diamond.area, diamond.perimeter)
+
+par = Parallelogram(3, 5, math.pi/6)
+print(par.width, par.height, par.area, par.perimeter)
