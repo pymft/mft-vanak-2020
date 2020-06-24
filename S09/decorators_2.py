@@ -26,7 +26,7 @@ def twice(f):
 def echo(s):
     return s
 
-@decorator_creator('yellow')
+@decorator_creator('red')
 def factorial(n: int):
     answer = 1
     for i in range(1, n+1):
