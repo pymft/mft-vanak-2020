@@ -1,3 +1,4 @@
+# مربع
 class Area:
     def __get__(self, instance, owner):
         return instance.side * instance.side
@@ -14,3 +15,7 @@ class Square:
 
     def __init__(self, a):
         self.side = a
+
+
+sq = Square(10)
+print(sq.perimeter, sq.area)
