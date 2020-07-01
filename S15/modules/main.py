@@ -1,3 +1,3 @@
-import directory
+from directory import template
 
-print(directory.template.num)
+print(template.num)
