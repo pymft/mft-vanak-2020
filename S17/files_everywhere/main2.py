@@ -1,17 +1,24 @@
 import glob
 
 
-list_of_files = glob.glob('./files/*.txt')
+def get_child_to_parent(directory, extention):
+    # files_path = directory + '/*.' + extention
+    files_path = f"{directory}/*.{extention}"
+    list_of_files = glob.glob(files_path)
+    child_to_parent = {}
 
-child_to_parent = {}
+    start = len(directory) + 1
+    stop = len(extention) + 1
 
-for path in list_of_files:
-    esme_file = path[8:18]
+    for path in list_of_files:
+        child = path[start:-stop]
+        with open(path) as f:
+            parent = f.read()
 
-    with open(path) as f:
-        matne_file = f.read()
+        child_to_parent[child] = parent
+
+    return child_to_parent
 
 
-    child_to_parent[esme_file] = matne_file
-
-print(child_to_parent)
+result = get_child_to_parent('./files', 'txt')
+print(result)
