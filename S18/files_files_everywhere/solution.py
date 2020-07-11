@@ -1,3 +1,6 @@
+import glob
+
+
 class Node:
     instances = {}
 
@@ -33,7 +36,7 @@ class Node:
     @parent.setter
     def parent(self, value):
         self.__parent = value
-        value.add_child(self)
+        self.__parent.add_child(self)
 
     @property
     def children_count(self):
@@ -45,40 +48,37 @@ class Node:
             return [self]
         return self.parent.ancestors + [self]
 
+    @classmethod
+    def no_children_nodes(cls):
+        no_children = []
+        for node in cls.instances.values():
+
+            if node.children_count == 0:
+                no_children.append(node)
+
+        return no_children
+
+directory = "./files"
+extension = "txt"
+
+files_path = f"{directory}/*.{extension}"
+list_of_files = glob.glob(files_path)
+start = len(directory) + 1
+stop = len(extension) + 1
+
+for path in list_of_files:
+    child_name = path[start:-stop]
+    with open(path) as f:
+        parent_name = f.read()
 
 
-
-x = Node('0')
-a = Node('1000')
-b = Node('2000')
-c = Node('3000')
-d = Node('1000')
-e = Node('5000')
-
-a.parent = x
-b.parent = a
-c.parent = a
-e.parent = b
+    Node(child_name).parent = Node(parent_name)
 
 
-print(b.parent)
-print(d.children, d.children_count)
-print(b.children, b.children_count)
+# print(Node.instances)
+# print(Node('3339551577').ancestors)
+# print(Node('0').children)
 
+for node in Node.no_children_nodes():
+    print(node.ancestors)
 
-print(e.ancestors)
-#     x          a            b            e
-# [Node('0'), Node(1000), Node(2000), Node(5000)]
-# [e.parent.parent.parent , e.parent.parent, e.parent, e]
-
-
-# for node in Node.instances.values():
-#     print(node)
-#
-
-#
-# Node.read_all_files('./files', 'txt')
-# no_children = Node.no_children_nodes()
-#
-# for node in no_children:
-#     print(node.ancestors)
