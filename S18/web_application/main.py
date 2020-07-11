@@ -13,9 +13,11 @@ def index():
 def images(number=1):
     return f"Images No. {number}"
 
+
 @app.route('/table/<int:rows>/<int:cols>')
 def table(rows, cols):
     return render_template('table.html', rows=rows, cols=cols)
+
 
 @app.route('/bmi/<int:weight>/<int:height>')
 def calculate_bmi(weight, height):
