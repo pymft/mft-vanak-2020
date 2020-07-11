@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Flask App</title>
+</head>
+<body>
+    <h1> rows {{ rows }} -  cols {{ cols }}</h1>
+
+    <table style="width:100%; color:blue">
+    {% for row in range(rows) %}
+        <tr>
+            {% for col in range(cols) %}
+                <td>{{ row }} | {{ col }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
