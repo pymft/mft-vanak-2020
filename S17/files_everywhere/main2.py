@@ -66,7 +66,7 @@ def ancestors(c2p, node_number):
 
 
 
-c2p = get_child_to_parent('./files', 'txt')
+c2p = get_child_to_parent('./files_files_everywhere', 'txt')
 print(c2p)
 no_parent = get_nodes_with_no_parent(c2p)
 print(no_parent)
