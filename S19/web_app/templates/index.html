@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python Flask</title>
+</head>
+<body>
+    <h1>Web Page Title</h1>
+
+    <table style="background:blue; color:yellow; width:100%">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Age</td>
+        </tr>
+        {% for person in persons %}
+        <tr>
+            {% for data in person %}
+                <td>{{ data }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
